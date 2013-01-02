@@ -58,6 +58,7 @@ private static final int GUESSES = 8;
 		if (str.length() == 1) {
 			char ch = Character.toUpperCase(str.charAt(0));
 			if (word.indexOf(ch) == -1) {
+				println("There are no " + ch +"'s in the word");
 				guess--;
 			} else {
 				for (int i=0; i<len; i++) {
@@ -65,6 +66,7 @@ private static final int GUESSES = 8;
 						result = result.substring(0,i) + ch + result.substring(i+1);
 					}
 				}
+				println("That guess is correct.");
 			}
 		} else {
 			println ("Please insert only one character");
@@ -75,7 +77,7 @@ private static final int GUESSES = 8;
 	
 	private void showResult() {
 		if (win) {
-			println("The word is " + word);
+			println("You guessed the word: " + word);
 			println("Congratulations. You won!");
 		}else if (lose) {
 			println("Sorry, you lost. Try again.");
