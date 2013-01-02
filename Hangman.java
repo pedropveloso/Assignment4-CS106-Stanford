@@ -30,7 +30,7 @@ private static final int GUESSES = 8;
 	}
 	
 	private boolean gameOver() {
-		return (win) || (loose);
+		return (win) || (lose);
 	}
 	
 	private void setup() {
@@ -56,14 +56,20 @@ private static final int GUESSES = 8;
 		String str = readLine("Please enter a new guess:");
 		if (str.length() == 1) {
 			char ch = Character.toUpperCase(str.charAt(0));
-			for (int i=0; i<len; i++) {
-				if (word.charAt(i) == ch) {
-					result = result.substring(0,i) + ch + result.substring(i+1);
+			if (word.indexOf(ch) == -1) {
+				guess--;
+			} else {
+				for (int i=0; i<len; i++) {
+					if (word.charAt(i) == ch) {
+						result = result.substring(0,i) + ch + result.substring(i+1);
+					}
 				}
 			}
 		} else {
 			println ("Please insert only one character");
 		}
+		if (guess ==0) lose=true;
+		if (result.equalsIgnoreCase(word)) win=true;
 	}
 	
 //private HangmanCanvas canvas;
@@ -72,6 +78,6 @@ private int len; // the length of the secret word
 private int guess; //the number of guesses the user has
 private String result; //the current state of the guesses word
 private boolean win; //true when user guesses all the letters of the word
-private boolean loose; //true when the player makes 8 wrong guesses
+private boolean lose; //true when the player makes 8 wrong guesses
 private RandomGenerator rgen = RandomGenerator.getInstance();    
 }
