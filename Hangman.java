@@ -77,7 +77,7 @@ private static final int GUESSES = 8;
 		if (win) {
 			println("The word is " + word);
 			println("Congratulations. You won!");
-		}else if (loose) {
+		}else if (lose) {
 			println("Sorry, you lost. Try again.");
 		}
 	}
