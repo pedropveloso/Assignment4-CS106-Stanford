@@ -27,8 +27,8 @@ public class Hangman extends ConsoleProgram {
 	}
 	
 	private void chooseWord() {
-		int index = rgen.nextInt(0,9);
-		word = getWord(index);
+		int index = rgen.nextInt(0,HangmanLexicon.getWordCount()-1);
+		word = HangmanLexicon.getWord(index);
 		println (word);
 	}
 	
