@@ -12,9 +12,15 @@ import acm.util.*;
 import java.awt.*;
 
 public class Hangman extends ConsoleProgram {
-
-    public void run() {
-		/* You fill this in */
+	public void init() {
+		canvas = new HangmanCanvas();
+		add(canvas);
 	}
-
+	
+	public void run() {
+		println ("Hello");
+    	/* You fill this in */
+	}
+private HangmanCanvas canvas;
+    
 }
