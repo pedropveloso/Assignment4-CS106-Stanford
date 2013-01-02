@@ -36,7 +36,7 @@ private static final int GUESSES = 8;
 	
 	private void setup() {
 		guess = GUESSES;
-		int index = rgen.nextInt(0, 9);
+		int index = rgen.nextInt(0, HangmanLexicon.getWordCount()-1);
 		word = HangmanLexicon.getWord(index);
 		len = word.length();
 		result = "";
