@@ -54,13 +54,16 @@ private static final int GUESSES = 8;
 	
 	private void newGuess(){
 		String str = readLine("Please enter a new guess:");
-		char ch = Character.toUpperCase(str.charAt(0));
-		for (int i=0; i<len; i++) {
-			if (word.charAt(i) == ch) {
-				result = result.substring(0,i) + ch + result.substring(i+1);
+		if (str.length() == 1) {
+			char ch = Character.toUpperCase(str.charAt(0));
+			for (int i=0; i<len; i++) {
+				if (word.charAt(i) == ch) {
+					result = result.substring(0,i) + ch + result.substring(i+1);
+				}
 			}
+		} else {
+			println ("Please insert only one character");
 		}
-		
 	}
 	
 //private HangmanCanvas canvas;
