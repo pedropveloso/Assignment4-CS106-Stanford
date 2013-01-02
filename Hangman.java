@@ -12,15 +12,28 @@ import acm.util.*;
 import java.awt.*;
 
 public class Hangman extends ConsoleProgram {
-	public void init() {
+/*	public void init() {
 		canvas = new HangmanCanvas();
 		add(canvas);
-	}
+	}*/
 	
 	public void run() {
-		println ("Hello");
-    	/* You fill this in */
+		println ("Welcome to Hangman!");
+		chooseWord();
+/*		while (!gameOver) {
+			showWord();
+			gess();
+		}*/
 	}
-private HangmanCanvas canvas;
-    
+	
+	private void chooseWord() {
+		int index = rgen.nextInt(0,9);
+		word = getWord(index);
+		println (word);
+	}
+	
+	
+//private HangmanCanvas canvas;
+private String word; //the secret word of the game	
+private RandomGenerator rgen = RandomGenerator.getInstance();    
 }
