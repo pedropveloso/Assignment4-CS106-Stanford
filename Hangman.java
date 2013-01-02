@@ -47,8 +47,8 @@ private static final int GUESSES = 8;
 	private void showWord() {
 		println ("The word now looks like this: " + result);
 		switch (guess) {
-		case 1: println("You have only one guess left");
 		default: println("You have " + guess + " guesses left.");
+		case 1: println("You have only one guess left");
 		}
 	}
 	
