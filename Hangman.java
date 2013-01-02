@@ -24,10 +24,10 @@ private static final int GUESSES = 8;
 		println ("Welcome to Hangman!");
 		chooseWord();
 		guess = GUESSES;
-/*		while (!gameOver) {
+		while (!gameOver()) {
 			showWord();
-			newGuess();
-		}*/
+//			newGuess();
+		}
 	}
 	
 	private boolean gameOver() {
