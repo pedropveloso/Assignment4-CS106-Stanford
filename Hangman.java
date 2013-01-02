@@ -80,6 +80,8 @@ private static final int GUESSES = 8;
 			println("You guessed the word: " + word);
 			println("Congratulations. You won!");
 		}else if (lose) {
+			println("You're completely hung.");
+			println("The word was: " + word);
 			println("Sorry, you lost. Try again.");
 		}
 	}
