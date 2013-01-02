@@ -27,6 +27,7 @@ private static final int GUESSES = 8;
 			showWord();
 			newGuess();
 		}
+		showResult();
 	}
 	
 	private boolean gameOver() {
@@ -47,8 +48,8 @@ private static final int GUESSES = 8;
 	private void showWord() {
 		println ("The word now looks like this: " + result);
 		switch (guess) {
-		default: println("You have " + guess + " guesses left.");
-		case 1: println("You have only one guess left");
+		case 1: println("You have only one guess left"); break;
+		default: println("You have " + guess + " guesses left."); break;
 		}
 	}
 	
@@ -70,6 +71,15 @@ private static final int GUESSES = 8;
 		}
 		if (guess ==0) lose=true;
 		if (result.equalsIgnoreCase(word)) win=true;
+	}
+	
+	private void showResult() {
+		if (win) {
+			println("The word is " + word);
+			println("Congratulations. You won!");
+		}else if (loose) {
+			println("Sorry, you lost. Try again.");
+		}
 	}
 	
 //private HangmanCanvas canvas;
