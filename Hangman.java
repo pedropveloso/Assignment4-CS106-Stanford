@@ -22,22 +22,21 @@ private static final int GUESSES = 8;
 	
 	public void run() {
 		println ("Welcome to Hangman!");
-		chooseWord();
-		guess = GUESSES;
-//		while (!gameOver()) {
+		setup();
+		while (!gameOver()) {
 			showWord();
-//			newGuess();
+			newGuess();
 		}
-//	}
+	}
 	
 	private boolean gameOver() {
 		return (win) || (loose);
 	}
 	
-	private void chooseWord() {
+	private void setup() {
+		guess = GUESSES;
 		int index = rgen.nextInt(0,HangmanLexicon.getWordCount()-1);
 		word = HangmanLexicon.getWord(index);
-		println("Test word: " + word);
 		len = word.length();
 		result = "";
 		for (int i=0; i<len; i++) {
@@ -51,6 +50,11 @@ private static final int GUESSES = 8;
 		case 1: println("You have only one guess left");
 		default: println("You have " + guess + " guesses left.");
 		}
+	}
+	
+	private void newGuess(){
+		//FALTA FAZER ESTA PARTE
+		
 	}
 	
 //private HangmanCanvas canvas;
