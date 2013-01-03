@@ -57,7 +57,7 @@ private RandomGenerator rgen = RandomGenerator.getInstance();
 		for (int i=0; i<len; i++) {
 			result = result + "-";
 		}
-		//canvas.displayWord(result);
+		canvas.displayWord(result);
 	}
 	
 	private void showWord() {
