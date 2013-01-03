@@ -95,6 +95,7 @@ private RandomGenerator rgen = RandomGenerator.getInstance();
 	
 	private void showResult() {
 		if (win) {
+			canvas.displayWord(result);
 			println("You guessed the word: " + word);
 			println("Congratulations. You won!");
 		}else if (lose) {
