@@ -9,11 +9,11 @@ import acm.graphics.*;
 public class HangmanCanvas extends GCanvas {
 
 /* Instance variables*/
-private double xCenter = getWidth()/2;
-private double xScaffold = xCenter - BEAM_LENGTH;
-private double yScaffoldTop = getHeight()/2 - ROPE_LENGTH - 2 * HEAD_RADIUS - BODY_LENGTH;
-private double yScaffoldBottom = yScaffoldTop + SCAFFOLD_HEIGHT;
-private double yRope = yScaffoldTop + ROPE_LENGTH;
+private double xCenter;
+private double xScaffold;
+private double yScaffoldTop;
+private double yScaffoldBottom;
+private double yRope;
 private double yLabel;
 private double xLabel;
 	
@@ -24,11 +24,11 @@ private double xLabel;
 	}
 
 	private void drawScaffold() {
-		/*xCenter = getWidth()/2;
+		xCenter = getWidth()/2;
 		xScaffold = xCenter - BEAM_LENGTH;
 		yScaffoldTop = getHeight()/2 - ROPE_LENGTH - 2 * HEAD_RADIUS - BODY_LENGTH;
 		yScaffoldBottom = yScaffoldTop + SCAFFOLD_HEIGHT;
-		yRope = yScaffoldTop + ROPE_LENGTH;*/
+		yRope = yScaffoldTop + ROPE_LENGTH;
 		GLine scaffold = new GLine (xScaffold, yScaffoldTop, xScaffold, yScaffoldBottom);
 		GLine beam = new GLine(xScaffold, yScaffoldTop, xCenter, yScaffoldTop);
 		GLine rope = new GLine (xCenter, yScaffoldTop, xCenter, yRope);
