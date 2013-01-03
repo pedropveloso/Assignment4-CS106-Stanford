@@ -16,7 +16,7 @@ private double yScaffoldBottom;
 private double yRope;
 private double ySecretWord;
 private double xSecretWord;
-private GLabel secretWord;
+private GLabel secretWord = new GLabel ("");
 	
 /** Resets the display so that only the scaffold appears */
 	public void reset() {
