@@ -24,6 +24,11 @@ double xLabel;
 	}
 
 	private void drawScaffold() {
+		xCenter = getWidth()/2;
+		xScaffold = xCenter - BEAM_LENGTH;
+		yScaffoldTop = getHeight()/2 - ROPE_LENGTH - 2 * HEAD_RADIUS - BODY_LENGTH;
+		yScaffoldBottom = yScaffoldTop + SCAFFOLD_HEIGHT;
+		yRope = yScaffoldTop + ROPE_LENGTH;
 		GLine scaffold = new GLine (xScaffold, yScaffoldTop, xScaffold, yScaffoldBottom);
 		GLine beam = new GLine(xScaffold, yScaffoldTop, xCenter, yScaffoldTop);
 		GLine rope = new GLine (xCenter, yScaffoldTop, xCenter, yRope);
