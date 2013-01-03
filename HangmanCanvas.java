@@ -30,12 +30,15 @@ private GLabel secretWord;
 		yScaffoldTop = getHeight()/2 - ROPE_LENGTH - 2 * HEAD_RADIUS - BODY_LENGTH;
 		yScaffoldBottom = yScaffoldTop + SCAFFOLD_HEIGHT;
 		yRope = yScaffoldTop + ROPE_LENGTH;
+		ySecretWord = (getHeight() + yScaffoldBottom)/2; 
+		xSecretWord = (getWidth() - secretWord.getWidth())/2;
 		GLine scaffold = new GLine (xScaffold, yScaffoldTop, xScaffold, yScaffoldBottom);
 		GLine beam = new GLine(xScaffold, yScaffoldTop, xCenter, yScaffoldTop);
 		GLine rope = new GLine (xCenter, yScaffoldTop, xCenter, yRope);
 		add (scaffold);
 		add (beam);
 		add (rope);
+		add (secretWord, xSecretWord, ySecretWord);
 	}
 
 /**
@@ -45,9 +48,6 @@ private GLabel secretWord;
  */
 	public void displayWord(String word) {
 		secretWord.setLabel(word);
-		ySecretWord = (getHeight() + yScaffoldBottom)/2; 
-		xSecretWord = (getWidth() - secretWord.getWidth())/2;
-		add (secretWord, xSecretWord, ySecretWord);
 	}
 
 /**
