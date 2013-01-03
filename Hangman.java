@@ -15,10 +15,10 @@ public class Hangman extends ConsoleProgram {
 
 private static final int GUESSES = 8;	
 	
-	/*	public void init() {
+		public void init() {
 		canvas = new HangmanCanvas();
 		add(canvas);
-	}*/
+	}
 	
 	public void run() {
 		println ("Welcome to Hangman!");
@@ -86,7 +86,7 @@ private static final int GUESSES = 8;
 		}
 	}
 	
-//private HangmanCanvas canvas;
+private HangmanCanvas canvas;
 private String word; //the secret word of the game	
 private int len; // the length of the secret word
 private int guess; //the number of guesses the user has
