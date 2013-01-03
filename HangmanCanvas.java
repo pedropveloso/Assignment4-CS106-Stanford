@@ -16,6 +16,7 @@ private double yScaffoldBottom;
 private double yRope;
 private double ySecretWord;
 private double xSecretWord;
+private GLabel secretWord;
 	
 /** Resets the display so that only the scaffold appears */
 	public void reset() {
@@ -43,8 +44,7 @@ private double xSecretWord;
  * been guessed so far; unguessed letters are indicated by hyphens.
  */
 	public void displayWord(String word) {
-		GLabel secretWord = new GLabel (word);
-		remove (secretWord);
+		secretWord.setLabel(word);
 		ySecretWord = (getHeight() + yScaffoldBottom)/2; 
 		xSecretWord = (getWidth() - secretWord.getWidth())/2;
 		add (secretWord, xSecretWord, ySecretWord);
