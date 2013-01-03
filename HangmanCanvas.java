@@ -44,7 +44,7 @@ private double xLabel;
  */
 	public void displayWord(String word) {
 		GLabel label = new GLabel (word);
-		yLabel = (getWidth() + yScaffoldTop + SCAFFOLD_HEIGHT)/2; 
+		yLabel = (getHeight() + yScaffoldBottom)/2; 
 		xLabel = (getWidth() - label.getWidth())/2;
 		add (label, xLabel, yLabel);
 	}
