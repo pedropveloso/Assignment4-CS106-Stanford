@@ -52,12 +52,12 @@ private RandomGenerator rgen = RandomGenerator.getInstance();
 		guess = GUESSES;
 		int index = rgen.nextInt(0, lexicon.getWordCount()-1);
 		word = lexicon.getWord(index);
-		canvas.displayWord(word);
 		len = word.length();
 		result = "";
 		for (int i=0; i<len; i++) {
 			result = result + "-";
 		}
+		canvas.displayWord(result);
 	}
 	
 	private void showWord() {
