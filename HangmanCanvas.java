@@ -8,25 +8,29 @@ import acm.graphics.*;
 
 public class HangmanCanvas extends GCanvas {
 
+/* Instance variables*/
+double xCenter = getWidth()/2;
+double xScaffold = xCenter - BEAM_LENGTH;
+double yScaffoldTop = getHeight()/2 - ROPE_LENGTH - 2 * HEAD_RADIUS - BODY_LENGTH;
+double yScaffoldBottom = yScaffoldTop + SCAFFOLD_HEIGHT;
+double yRope = yScaffoldTop + ROPE_LENGTH;;
+double yLabel;
+double xLabel;
+	
 /** Resets the display so that only the scaffold appears */
 	public void reset() {
 		removeAll();
 		drawScaffold();
 	}
 
-private void drawScaffold() {
-	double xCenter = getWidth()/2;
-	double xScaffold = xCenter - BEAM_LENGTH;
-	double yScaffoldTop = getHeight()/2 - ROPE_LENGTH - 2 * HEAD_RADIUS - BODY_LENGTH;
-	double yScaffoldBottom = yScaffoldTop + SCAFFOLD_HEIGHT;
-	double yRope = yScaffoldTop + ROPE_LENGTH;
-	GLine scaffold = new GLine (xScaffold, yScaffoldTop, xScaffold, yScaffoldBottom);
-	GLine beam = new GLine(xScaffold, yScaffoldTop, xCenter, yScaffoldTop);
-	GLine rope = new GLine (xCenter, yScaffoldTop, xCenter, yRope);
-	add (scaffold);
-	add (beam);
-	add (rope);
-}
+	private void drawScaffold() {
+		GLine scaffold = new GLine (xScaffold, yScaffoldTop, xScaffold, yScaffoldBottom);
+		GLine beam = new GLine(xScaffold, yScaffoldTop, xCenter, yScaffoldTop);
+		GLine rope = new GLine (xCenter, yScaffoldTop, xCenter, yRope);
+		add (scaffold);
+		add (beam);
+		add (rope);
+	}
 
 /**
  * Updates the word on the screen to correspond to the current
@@ -34,7 +38,10 @@ private void drawScaffold() {
  * been guessed so far; unguessed letters are indicated by hyphens.
  */
 	public void displayWord(String word) {
-		/* You fill this in */
+		GLabel label = new GLabel (word);
+		yLabel = (getWidth() + yScaffoldTop + SCAFFOLD_HEIGHT)/2; 
+		xLabel = (getWidth() - label.getWidth())/2;
+		add (label, xLabel, yLabel);
 	}
 
 /**
