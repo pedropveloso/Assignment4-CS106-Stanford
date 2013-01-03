@@ -16,7 +16,10 @@ private double yScaffoldBottom;
 private double yRope;
 private double ySecretWord;
 private double xSecretWord;
+private double yBadGuesses;
+private double xBadGuesses;
 private GLabel secretWord = new GLabel ("");
+private GLabel badGuesses = new GLabel ("");
 	
 /** Resets the display so that only the scaffold appears */
 	public void reset() {
@@ -30,6 +33,7 @@ private GLabel secretWord = new GLabel ("");
 		yScaffoldTop = getHeight()/2 - ROPE_LENGTH - 2 * HEAD_RADIUS - BODY_LENGTH;
 		yScaffoldBottom = yScaffoldTop + SCAFFOLD_HEIGHT;
 		yRope = yScaffoldTop + ROPE_LENGTH;
+		secretWord.setFont("HELVETICA, BOLD, 20");
 		ySecretWord = (getHeight() + yScaffoldBottom)/2; 
 		xSecretWord = (getWidth() - secretWord.getWidth())/2;
 		GLine scaffold = new GLine (xScaffold, yScaffoldTop, xScaffold, yScaffoldBottom);
