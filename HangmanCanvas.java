@@ -10,8 +10,17 @@ public class HangmanCanvas extends GCanvas {
 
 /** Resets the display so that only the scaffold appears */
 	public void reset() {
-		/* You fill this in */
+		this.removeAll();
+		drawScaffold();
 	}
+
+private void drawScaffold() {
+	double xScaffold = getWidth()/2 - BEAM_LENGTH;
+	double yScaffoldTop = getHeight()/2 - ROPE_LENGTH - 2 * HEAD_RADIUS - BODY_LENGTH;
+	double yScaffoldBottom = yScaffoldTop + SCAFFOLD_HEIGHT;
+	GLine scaffold = new GLine (xScaffold, yScaffoldTop, xScaffold, yScaffoldBottom);
+	add (scaffold);
+}
 
 /**
  * Updates the word on the screen to correspond to the current
