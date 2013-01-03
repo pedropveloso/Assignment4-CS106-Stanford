@@ -33,7 +33,6 @@ private GLabel badGuesses = new GLabel ("");
 		yScaffoldTop = getHeight()/2 - ROPE_LENGTH - 2 * HEAD_RADIUS - BODY_LENGTH;
 		yScaffoldBottom = yScaffoldTop + SCAFFOLD_HEIGHT;
 		yRope = yScaffoldTop + ROPE_LENGTH;
-		secretWord.setFont("HELVETICA, font.BOLD, 40");
 		ySecretWord = (getHeight() + yScaffoldBottom)/2; 
 		xSecretWord = (getWidth() - secretWord.getWidth())/2;
 		GLine scaffold = new GLine (xScaffold, yScaffoldTop, xScaffold, yScaffoldBottom);
@@ -52,6 +51,7 @@ private GLabel badGuesses = new GLabel ("");
  */
 	public void displayWord(String word) {
 		secretWord.setLabel(word);
+		secretWord.setFont("HELVETICA, font.BOLD, 40");
 	}
 
 /**
