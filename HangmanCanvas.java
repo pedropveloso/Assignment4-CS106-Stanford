@@ -53,7 +53,7 @@ private GLabel badGuesses = new GLabel ("");
 		secretWord.setLabel(word);
 		secretWord.setFont("Helvetica, font.BOLD, 40");
 		double x = (getWidth()- secretWord.getWidth())/2;
-		secretWord.move(x, ySecretWord);
+		secretWord.setLocation(x, ySecretWord);
 	}
 
 /**
