@@ -20,6 +20,7 @@ private static final int GUESSES = 8;
 private HangmanCanvas canvas;
 private HangmanLexicon lexicon;
 private String word; //the secret word of the game	
+private String badGuesses; //the bad guesses already made by the player
 private int len; // the length of the secret word
 private int guess; //the number of guesses the user has
 private String result; //the current state of the guesses word
@@ -54,14 +55,15 @@ private RandomGenerator rgen = RandomGenerator.getInstance();
 		word = lexicon.getWord(index);
 		len = word.length();
 		result = "";
+		badGuesses="";
 		for (int i=0; i<len; i++) {
 			result = result + "-";
 		}
-		canvas.displayWord(result);
 	}
 	
 	private void showWord() {
 		println ("The word now looks like this: " + result);
+		canvas.displayWord(result);
 		switch (guess) {
 		case 1: println("You have only one guess left"); break;
 		default: println("You have " + guess + " guesses left."); break;
@@ -74,7 +76,7 @@ private RandomGenerator rgen = RandomGenerator.getInstance();
 			char ch = Character.toUpperCase(str.charAt(0));
 			if (word.indexOf(ch) == -1) {
 				println("There are no " + ch +"'s in the word");
-				
+				badGuesses = badGuesses + ch;
 				guess--;
 			} else {
 				for (int i=0; i<len; i++) {
