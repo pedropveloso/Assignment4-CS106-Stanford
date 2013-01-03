@@ -16,7 +16,7 @@ public class Hangman extends ConsoleProgram {
 /*Constant*/
 private static final int GUESSES = 8;	
 
-/*Instace variables*/
+/*Instance variables*/
 private HangmanCanvas canvas;
 private HangmanLexicon lexicon;
 private String word; //the secret word of the game	
@@ -30,6 +30,7 @@ private RandomGenerator rgen = RandomGenerator.getInstance();
 		public void init() {
 		canvas = new HangmanCanvas();
 		add(canvas);
+		lexicon = new HangmanLexicon();
 	}
 	
 	public void run() {
