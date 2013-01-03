@@ -13,8 +13,20 @@ import java.awt.*;
 
 public class Hangman extends ConsoleProgram {
 
+/*Constant*/
 private static final int GUESSES = 8;	
-	
+
+/*Instace variables*/
+private HangmanCanvas canvas;
+private HangmanLexicon lexicon;
+private String word; //the secret word of the game	
+private int len; // the length of the secret word
+private int guess; //the number of guesses the user has
+private String result; //the current state of the guesses word
+private boolean win; //true when user guesses all the letters of the word
+private boolean lose; //true when the player makes 8 wrong guesses
+private RandomGenerator rgen = RandomGenerator.getInstance();    
+
 		public void init() {
 		canvas = new HangmanCanvas();
 		add(canvas);
@@ -35,9 +47,10 @@ private static final int GUESSES = 8;
 	}
 	
 	private void setup() {
+		canvas.reset();
 		guess = GUESSES;
-		int index = rgen.nextInt(0, HangmanLexicon.getWordCount()-1);
-		word = HangmanLexicon.getWord(index);
+		int index = rgen.nextInt(0, lexicon.getWordCount()-1);
+		word = lexicon.getWord(index);
 		len = word.length();
 		result = "";
 		for (int i=0; i<len; i++) {
@@ -86,12 +99,5 @@ private static final int GUESSES = 8;
 		}
 	}
 	
-private HangmanCanvas canvas;
-private String word; //the secret word of the game	
-private int len; // the length of the secret word
-private int guess; //the number of guesses the user has
-private String result; //the current state of the guesses word
-private boolean win; //true when user guesses all the letters of the word
-private boolean lose; //true when the player makes 8 wrong guesses
-private RandomGenerator rgen = RandomGenerator.getInstance();    
+
 }

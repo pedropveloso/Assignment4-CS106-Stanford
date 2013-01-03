@@ -10,12 +10,12 @@ import acm.util.*;
 public class HangmanLexicon {
 
 /** Returns the number of words in the lexicon. */
-	public static int getWordCount() {
+	public int getWordCount() {
 		return 10;
 	}
 
 /** Returns the word at the specified index. */
-	public static String getWord(int index) {
+	public String getWord(int index) {
 		switch (index) {
 			case 0: return "BUOY";
 			case 1: return "COMPUTER";
