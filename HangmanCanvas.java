@@ -44,6 +44,7 @@ private double xSecretWord;
  */
 	public void displayWord(String word) {
 		GLabel secretWord = new GLabel (word);
+		remove (secretWord);
 		ySecretWord = (getHeight() + yScaffoldBottom)/2; 
 		xSecretWord = (getWidth() - secretWord.getWidth())/2;
 		add (secretWord, xSecretWord, ySecretWord);
