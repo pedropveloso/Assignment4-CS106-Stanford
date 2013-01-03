@@ -27,7 +27,7 @@ private boolean win; //true when user guesses all the letters of the word
 private boolean lose; //true when the player makes 8 wrong guesses
 private RandomGenerator rgen = RandomGenerator.getInstance();    
 
-		public void init() {
+	public void init() {
 		canvas = new HangmanCanvas();
 		add(canvas);
 		lexicon = new HangmanLexicon();
@@ -52,6 +52,7 @@ private RandomGenerator rgen = RandomGenerator.getInstance();
 		guess = GUESSES;
 		int index = rgen.nextInt(0, lexicon.getWordCount()-1);
 		word = lexicon.getWord(index);
+		canvas.displayWord(word);
 		len = word.length();
 		result = "";
 		for (int i=0; i<len; i++) {
@@ -73,6 +74,7 @@ private RandomGenerator rgen = RandomGenerator.getInstance();
 			char ch = Character.toUpperCase(str.charAt(0));
 			if (word.indexOf(ch) == -1) {
 				println("There are no " + ch +"'s in the word");
+				
 				guess--;
 			} else {
 				for (int i=0; i<len; i++) {
