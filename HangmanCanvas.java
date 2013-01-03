@@ -15,11 +15,17 @@ public class HangmanCanvas extends GCanvas {
 	}
 
 private void drawScaffold() {
-	double xScaffold = getWidth()/2 - BEAM_LENGTH;
+	double xCenter = getWidth()/2;
+	double xScaffold = xCenter - BEAM_LENGTH;
 	double yScaffoldTop = getHeight()/2 - ROPE_LENGTH - 2 * HEAD_RADIUS - BODY_LENGTH;
 	double yScaffoldBottom = yScaffoldTop + SCAFFOLD_HEIGHT;
+	double yRope = yScaffoldTop + ROPE_LENGTH;
 	GLine scaffold = new GLine (xScaffold, yScaffoldTop, xScaffold, yScaffoldBottom);
+	GLine beam = new GLine(xScaffold, yScaffoldTop, xCenter, yScaffoldTop);
+	GLine rope = new GLine (xCenter, yScaffoldTop, xCenter, yRope);
 	add (scaffold);
+	add (beam);
+	add (rope);
 }
 
 /**
