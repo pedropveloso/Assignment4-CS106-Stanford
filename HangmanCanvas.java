@@ -58,6 +58,8 @@ private GLabel badGuesses = new GLabel ("");
 		GLine leftLeg = new GLine (xCenter - HIP_WIDTH, yBodyBottom, xCenter - HIP_WIDTH, yBodyBottom + LEG_LENGTH);
 		GLine rightHip = new GLine (xCenter, yBodyBottom, xCenter + HIP_WIDTH, yBodyBottom);
 		GLine rightLeg = new GLine (xCenter + HIP_WIDTH, yBodyBottom, xCenter + HIP_WIDTH, yBodyBottom + LEG_LENGTH);
+		GLine leftFoot = new GLine (xCenter - HIP_WIDTH, yBodyBottom + LEG_LENGTH, xCenter - HIP_WIDTH - FOOT_LENGTH, yBodyBottom + LEG_LENGTH);
+		GLine rightFoot = new GLine (xCenter + HIP_WIDTH, yBodyBottom + LEG_LENGTH, xCenter + HIP_WIDTH + FOOT_LENGTH, yBodyBottom + LEG_LENGTH);
 		add (scaffold);
 		add (beam);
 		add (rope);
@@ -71,6 +73,8 @@ private GLabel badGuesses = new GLabel ("");
 		add (leftLeg);
 		add (rightHip);
 		add (rightLeg);
+		add (leftFoot);
+		add (rightFoot);
 		add (secretWord, xSecretWord, ySecretWord);
 	}
 
