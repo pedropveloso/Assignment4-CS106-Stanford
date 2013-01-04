@@ -24,6 +24,7 @@ private double xSecretWord;
 private double yBadGuesses;
 private double xBadGuesses;
 private GLabel secretWord = new GLabel ("");
+private String str = "";
 private GLabel badGuesses = new GLabel ("");
 	
 /** Resets the display so that only the scaffold appears */
@@ -45,6 +46,8 @@ private GLabel badGuesses = new GLabel ("");
 		yLowerArm = yUpperArm + LOWER_ARM_LENGTH;
 		ySecretWord = (getHeight() + yScaffoldBottom)/2; 
 		xSecretWord = getWidth()/2;
+		xBadGuesses = getWidth()/2;
+		yBadGuesses = (getHeight() - BOTTOM_OFFSET);
 		GLine scaffold = new GLine (xScaffold, yScaffoldTop, xScaffold, yScaffoldBottom);
 		GLine beam = new GLine(xScaffold, yScaffoldTop, xCenter, yScaffoldTop);
 		GLine rope = new GLine (xCenter, yScaffoldTop, xCenter, yRope);
@@ -76,6 +79,7 @@ private GLabel badGuesses = new GLabel ("");
 		add (leftFoot);
 		add (rightFoot);
 		add (secretWord, xSecretWord, ySecretWord);
+		add (badGuesses);
 	}
 
 /**
@@ -97,7 +101,10 @@ private GLabel badGuesses = new GLabel ("");
  * guesses that appears at the bottom of the window.
  */
 	public void noteIncorrectGuess(char letter) {
-		
+		str = str + letter;
+		badGuesses.setLabel(str);
+		double x = (getWidth()- badGuesses.getWidth())/2;
+		badGuesses.setLocation(x, yBadGuesses);
 	}
 
 /* Constants for the simple version of the picture (in pixels) */
@@ -112,5 +119,6 @@ private GLabel badGuesses = new GLabel ("");
 	private static final int HIP_WIDTH = 36;
 	private static final int LEG_LENGTH = 108;
 	private static final int FOOT_LENGTH = 28;
+	private static final int BOTTOM_OFFSET = 10;
 
 }
