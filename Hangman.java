@@ -76,7 +76,7 @@ private RandomGenerator rgen = RandomGenerator.getInstance();
 			char ch = Character.toUpperCase(str.charAt(0));
 			if (word.indexOf(ch) == -1) {
 				println("There are no " + ch +"'s in the word");
-				badGuesses = badGuesses + ch;
+				canvas.noteIncorrectGuess(ch);
 				guess--;
 			} else {
 				for (int i=0; i<len; i++) {
