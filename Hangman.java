@@ -36,6 +36,10 @@ private RandomGenerator rgen = RandomGenerator.getInstance();
 	public void run() {
 		println ("Welcome to Hangman!");
 		setup();
+		play();
+	}
+	
+	private void play() {
 		while (!gameOver()) {
 			showWord();
 			newGuess();
