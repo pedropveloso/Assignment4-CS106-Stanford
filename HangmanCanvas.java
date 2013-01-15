@@ -37,7 +37,7 @@ private double yBadGuesses;
 private double xBadGuesses;
 private GLabel secretWord = new GLabel ("");
 private String str = "";
-private GLabel badGuesses;
+private GLabel badGuesses = new GLabel ("");
 	
 /** Resets the display so that only the scaffold appears */
 	public void reset() {
