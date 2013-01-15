@@ -37,6 +37,14 @@ private RandomGenerator rgen = RandomGenerator.getInstance();
 		println ("Welcome to Hangman!");
 		setup();
 		play();
+		while (true) {
+			String str = readLine("Do you want to play [Y/N]?: ");
+			if (str == "Y" || str == "y") {
+				setup();
+				play();
+			} else break;
+		}
+
 	}
 	
 	private void play() {
