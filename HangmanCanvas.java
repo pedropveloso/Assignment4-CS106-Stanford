@@ -42,6 +42,7 @@ private GLabel badGuesses = new GLabel ("");
 /** Resets the display so that only the scaffold appears */
 	public void reset() {
 		badGuesses.setLabel("");
+		str = "";
 		removeAll();
 		drawScaffold();
 	}
