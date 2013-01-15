@@ -39,10 +39,13 @@ private RandomGenerator rgen = RandomGenerator.getInstance();
 		play();
 		while (true) {
 			String str = readLine("Do you want to play [Y/N]?: ");
-			if (str == "Y" || str == "y") {
+			if (str.equals("Y") || str.equals("y")) {
 				setup();
 				play();
-			} else break;
+			} else {
+				println("Thanks for playing");
+				break;
+			}
 		}
 
 	}
