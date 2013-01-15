@@ -37,10 +37,11 @@ private double yBadGuesses;
 private double xBadGuesses;
 private GLabel secretWord = new GLabel ("");
 private String str = "";
-private GLabel badGuesses = new GLabel ("");
+private GLabel badGuesses;
 	
 /** Resets the display so that only the scaffold appears */
 	public void reset() {
+		badGuesses.setLabel("");
 		removeAll();
 		drawScaffold();
 	}
