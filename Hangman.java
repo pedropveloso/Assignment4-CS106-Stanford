@@ -64,8 +64,8 @@ private RandomGenerator rgen = RandomGenerator.getInstance();
 	
 	private void setup() {
 		canvas.reset();
-		lose = (Boolean) null;
-		win = (Boolean) null;
+		lose = false;
+		win = false;
 		guess = GUESSES;
 		int index = rgen.nextInt(0, lexicon.getWordCount()-1);
 		word = lexicon.getWord(index);
