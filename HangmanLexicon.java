@@ -16,7 +16,7 @@ private ArrayList<String> lineList;
 	
 	public HangmanLexicon() {
 		try {
-			BufferedReader rd = new BufferedReader (new FileReader ("ShorterLexicon.txt"));
+			BufferedReader rd = new BufferedReader (new FileReader ("HangmanLexicon.txt"));
 			lineList = new ArrayList<String>();
 			while (true) {
 				String line = rd.readLine();
